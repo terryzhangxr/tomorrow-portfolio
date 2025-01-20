@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terryzhang 的作品集</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+            min-height: 80vh;
+        }
+
+        #contact {
+            min-height: 42vh; /* Set the home section to be 30% of the viewport height */
+        }   
+ 
+        #about {
+            min-height: 23vh;
+        
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+       .photo {
+            width: 30%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s, box-shadow 0.5s;transform: scale(var(--scale, 1));
+        }
+
+
+
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h2, p, h5 {
+            transition: transform 0.5s, opacity 0.5s, color 0.3s;
+        }
+
+        .photo:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .photo:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        /* Add hover effect for text */
+        h2:hover, p:hover, h5:hover {
+            color: #00bfff; /* Cyan blue color */
+            transform: scale(1.1);
+        }
+           </style>
+</head>
+<body>
+    <header>
+        <h1>Terryzhang's Photo Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.mrzxr.com">BLOG</a></li>
+                <li><a href="https://github.com/terryzhangxr">Github--terryzhangxr</a></li>
+                <li><a href="#portfolio">Photos</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="mailto:zhang@mrzxr.com">Write to me</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>ME</h2>
+        <h5>中国 上海 初二学生</h5>
+        <h5>python / HTML,JS,CSS 项目构建&开发</h5>
+        <h5>主攻语言：py html，css，js</h5>
+        <h5>更多介绍请见：www.mrzxr.com</h5>
+        <h3>⬇⬇⬇⬇⬇</h3>         
+    </section>
+    
+    <section id="portfolio">
+        <h2>My Work</h2>
+        <div class="gallery">
+            <div class="photo"><img src="C:\Users\Terry\Pictures\Screenshots\屏幕截图 2025-01-13 213636.png" alt="TERRYZHANG's blog"></div>
+            <div class="photo"><img src="photo2.jpg" alt="Photo 2"></div>
+            <div class="photo"><img src="photo3.jpg" alt="Photo 3"></div>
+            <!-- Add more photos as needed -->
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p class="email">Email: zhang@mrzxr.com</p>
+        <p class="wechat">wechat code: xiaozhangterry</p>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // GSAP animations for the photo gallery
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.from('header', {
+                duration: 1,
+                y: '-100%',
+                ease: 'bounce'
+            });
+
+            gsap.from('section h2', {
+                scrollTrigger: {
+                    trigger: 'section h2',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true
+                },
+                y: 50,
+                opacity: 0
+            });
+
+            gsap.from('section p', {
+                scrollTrigger: {
+                    trigger: 'section p',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: true
+                },
+                y: 50,
+                opacity: 0
+            });
+
+            gsap.utils.toArray('.photo').forEach(photo => {
+                gsap.from(photo, {
+                    scrollTrigger: {
+                        trigger: photo,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        scrub: true
+                    },
+                    scale: 0.8,
+                    opacity: 0
+                });
+
+                photo.addEventListener('mouseover', () => {
+                    gsap.to(photo, { scale: 1.1, duration: 0.3 });
+                });
+
+                photo.addEventListener('mouseout', () => {
+                    gsap.to(photo, { scale: 1, duration: 0.3 });
+                });
+            });
+
+            // Interactive text hover effect
+            document.querySelectorAll('section h2, section p').forEach(text => {
+                text.addEventListener('mouseover', () => {
+                    gsap.to(text, { scale: 1.1, duration: 0.3, color: '#00bfff' });
+                });
+
+                text.addEventListener('mouseout', () => {
+                    gsap.to(text, { scale: 1, duration: 0.3, color: '#000' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
