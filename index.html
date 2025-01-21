@@ -161,7 +161,13 @@
                 max-width: 300px; /* 限制图片最大宽度 */
                 max-height: 200px; /* 限制图片最大高度 */
             }
+            var href=document.getElementsByTagName('a');
 
+            for(var i=0;i<href.length;i++){
+            href[i].ontouchend=function(){
+            window.location.href=this.getAttribute("href");
+            }
+            };
             section {
                 padding: 1em;
             }
