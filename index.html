@@ -161,13 +161,7 @@
                 max-width: 300px; /* 限制图片最大宽度 */
                 max-height: 200px; /* 限制图片最大高度 */
             }
-            var href=document.getElementsByTagName('a');
 
-            for(var i=0;i<href.length;i++){
-            href[i].ontouchend=function(){
-            window.location.href=this.getAttribute("href");
-            }
-            };
             section {
                 padding: 1em;
             }
@@ -186,11 +180,11 @@
         <h1>Terryzhang's Photo Portfolio</h1>
         <nav>
             <ul>
-                <div><a class="fx0" href="https://www.mrzxr.com">BLOG</a></div>
-                <div><a class="fx0" href="https://github.com/terryzhangxr">Github--terryzhangxr</a></div>
-                <div><a class="fx0" href="#portfolio">Pohtos</a></div>
-                <div><a class="fx0" href="#contact">Contact</a></div>
-                <div><a class="fx0" href="mailto:zhang@mrzxr.com">Write to me</a></div>
+                <div><a class="fx0" href="https://www.mrzxr.com" onclick="return handleLinkClick(event)">BLOG</a></div>
+                <div><a class="fx0" href="https://github.com/terryzhangxr" onclick="return handleLinkClick(event)">Github--terryzhangxr</a></div>
+                <div><a class="fx0" href="#portfolio" onclick="return handleLinkClick(event)">Photos</a></div>
+                <div><a class="fx0" href="#contact" onclick="return handleLinkClick(event)">Contact</a></div>
+                <div><a class="fx0" href="mailto:zhang@mrzxr.com" onclick="return handleLinkClick(event)">Write to me</a></div>
             </ul>
         </nav>
     </header>
@@ -207,7 +201,7 @@
     <section id="portfolio">
         <h2>My Work</h2>
         <div class="gallery">
-            <div class="photo"><img src="https://s21.ax1x.com/2025/01/21/pEAC8vd.png" alt="TERRY ZHANG's blog"></div>
+            <div class="photo"><img src="https://s2.loli.net/2025/01/21/KJPCRpLtbEgSkd7.png" alt="TERRY ZHANG's blog"></div>
             <div class="photo"><img src="photo2.jpg" alt="Photo 2"></div>
             <div class="photo"><img src="photo3.jpg" alt="Photo 3"></div>
         </div>
@@ -294,6 +288,15 @@
                 });
             });
         });
+
+        function handleLinkClick(event) {
+            // Only handle click on iPad
+            if (navigator.userAgent.match(/iPad/i)) {
+                window.location.href = event.target.href;
+                return false; // Prevent default link behavior
+            }
+            return true; // Allow default behavior on other devices
+        }
     </script>
 </body>
 </html>
