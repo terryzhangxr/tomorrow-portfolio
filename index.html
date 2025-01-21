@@ -153,6 +153,34 @@
                 align-items: center;
             }
         }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            header {
+                padding: 1em;
+            }
+
+            .gallery {
+                gap: 10px;
+            }
+
+            .photo {
+                margin: 5px;
+            }
+
+            .photo img {
+                max-width: 300px; /* 限制图片最大宽度 */
+                max-height: 200px; /* 限制图片最大高度 */
+            }
+
+            section {
+                padding: 1em;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -172,7 +200,7 @@
     </header>
     
     <section id="about">
-        <h2>ME</h2>
+        <h2>ME</h5>
         <h5>中国 上海 初二学生</h5>
         <p>python / HTML,JS,CSS 项目构建&开发</p>
         <p>主攻语言：py html，css，js</p>
