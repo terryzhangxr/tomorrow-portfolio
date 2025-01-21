@@ -48,7 +48,7 @@ VOLA
     ```
 
 3. 打开 `index.html` 文件
-4. 
+
 VOLA
 
 # 3配置教程 
