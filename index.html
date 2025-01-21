@@ -27,6 +27,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            text-align: center; /* Center align the nav items */
         }
 
         nav ul li {
@@ -36,7 +37,12 @@
             overflow: hidden;
         }
 
-        nav ul li a {
+        nav ul div {
+            display: inline-block; /* Change div to inline-block */
+            margin: 0 10px; /* Adjust margin as needed */
+        }
+
+        nav ul div a {
             color: white; /* 改变链接颜色为白色 */
             text-decoration: none;
             position: relative;
@@ -174,11 +180,11 @@
         <h1>Terryzhang's Photo Portfolio</h1>
         <nav>
             <ul>
-                <li><a href="https://www.mrzxr.com" target="_blank">BLOG</a></li>
-                <li><a href="https://github.com/terryzhangxr" target="_blank">Github--terryzhangxr</a></li>
-                <li><a href="#portfolio">Photos</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="mailto:zhang@mrzxr.com" target="_blank">Write to me</a></li>
+                <div><a class="fx0" href="https://www.mrzxr.com">BLOG</a></div>
+                <div><a class="fx0" href="https://github.com/terryzhangxr">Github--terryzhangxr</a></div>
+                <div><a class="fx0" href="#portfolio">Pohtos</a></div>
+                <div><a class="fx0" href="#contact">Contact</a></div>
+                <div><a class="fx0" href="mailto:zhang@mrzxr.com">Write to me</a></div>
             </ul>
         </nav>
     </header>
