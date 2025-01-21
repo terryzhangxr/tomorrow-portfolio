@@ -57,6 +57,7 @@ VOLA
   在```<body>``` ```<header id="main-header">```部分找到```<h1>Terryzhang's Photo Portfolio</h1>```将两个h1之间的内容改为您的标题，效果如下
   ![image](https://github.com/user-attachments/assets/3ff83abb-0824-482c-9fc0-a13d1785413d)
 
+
 3.更改首页链接
   在刚刚改动的标题部分下方找到如下代码
   ![image](https://github.com/user-attachments/assets/99d64acf-2c80-4672-8680-a99f0848546e)
@@ -66,6 +67,7 @@ VOLA
       <div><a class="fx0" href="#contact" onclick="return handleLinkClick(event)">Contact</a></div>
    ```
   这两行是本站快捷定位链接，您可以改动文本中的内容，但建议您不要随意改动前面链接里的定位链接，可能导致点击后无法对应定位
+  
   效果如下
    ![image](https://github.com/user-attachments/assets/19d1f9c4-7cf4-4203-b82a-70b4c7539977)
 
@@ -91,18 +93,22 @@ VOLA
   6.更改联系板块
     紧接着图片的就是联系板块，将```<p class="email">Email: zhang@mrzxr.com</p>```中的Email改为您的邮箱，同样您可以按照您的喜好添加联系方式
 
+
   7.进阶玩法
     本项目为开源作者已经添加好了所有的注释，希望有更高自定义度并且有代码基础的用户可以根据注释更改。新手请慎重
+
 
 # 部署（此处为vercel）
    (本地用户需先将index.html推到GitHub仓库上)
    1.注册并登录 Vercel
+   
    2.访问 [Vercel](https://vercel.com) 并注册一个账号，或者登录你的现有账号。
 
    3.新建项目
      点击 "New Project" 按钮，然后选择 "Import Git Repository"。
      授权并选择存储库
      授权 Vercel 访问你的 GitHub 账号，然后选择您的本项目存储库。
+
 
    4.配置部署设置
      在部署设置页面：
@@ -115,14 +121,22 @@ VOLA
 
 # 贡献
    项目创建者：[terryzhang](https://github.com/terryzhangxr)
+   
    欢迎对本项目做出贡献！请遵循以下步骤提交您的贡献：
    1. Fork 此存储库
+      
    2. 创建一个新的分支 (`git checkout -b feature-branch`)
+ 
    3. 提交您的更改 (`git commit -m '添加新特性'`)
+    
    4. 将更改推送到分支 (`git push origin feature-branch`)
+    
    5. 打开一个 Pull Request
+    
    6. 向作者写一封邮件到 [zhang@mrzxr.com](mailto:zhang@mrzxr.com)
+
       在此感激您的伟大贡献
+      
    ### 如果您觉得项目还不错，还恳请您给个star支持下作者，感激不尽！
    
 更多精彩欢迎移步 [www.mrzxr.com](https://www.mrzxr.com)
