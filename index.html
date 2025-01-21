@@ -20,9 +20,9 @@
             padding: 1em 0;
             text-align: center;
             position: relative;
-            opacity: 1; /* 初始显示 */
-            z-index: 1000; /* 确保 header 在顶层 */
-            transform: translateY(0); /* 确保初始位置 */
+            opacity: 1;
+            z-index: 1000;
+            transform: translateY(0);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
@@ -30,29 +30,29 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            text-align: center; /* 居中对齐导航项 */
+            text-align: center;
         }
 
         nav ul div {
-            display: inline-block; /* 更改 div 为 inline-block */
-            margin: 0 10px; /* 调整 margin */
-            z-index: 1001; /* 确保 div 在顶层 */
-            position: relative; /* 确保定位上下文 */
+            display: inline-block;
+            margin: 0 10px;
+            z-index: 1001;
+            position: relative;
         }
 
         nav ul div a {
-            color: white; /* 改变链接颜色为白色 */
+            color: white;
             text-decoration: none;
-            z-index: 1002; /* 确保链接在顶层 */
-            position: relative; /* 确保定位上下文 */
+            z-index: 1002;
+            position: relative;
         }
 
         section {
             padding: 2em;
             text-align: center;
             min-height: 80vh;
-            opacity: 0; /* 初始隐藏 */
-            transform: translateY(20px); /* 初始位置 */
+            opacity: 0;
+            transform: translateY(20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
@@ -83,11 +83,11 @@
         .photo img {
             width: 100%;
             height: auto;
-            max-width: 400px; /* 限制图片最大宽度 */
-            max-height: 300px; /* 限制图片最大高度 */
+            max-width: 400px;
+            max-height: 300px;
             display: block;
             object-fit: cover;
-            loading: lazy; /* 启用懒加载 */
+            loading: lazy;
         }
 
         h2, h5 {
@@ -125,7 +125,7 @@
             justify-content: center;
             align-items: center;
             font-size: 2em;
-            z-index: 10000; /* 确保 overlay 在最上层 */
+            z-index: 10000;
             animation: fadeOut 2s ease forwards;
         }
 
@@ -160,8 +160,8 @@
             }
 
             .photo img {
-                max-width: 300px; /* 限制图片最大宽度 */
-                max-height: 200px; /* 限制图片最大高度 */
+                max-width: 300px;
+                max-height: 200px;
             }
 
             section {
@@ -206,10 +206,8 @@
             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-01-13%20213636.png?updatedAt=1737440050555" alt="TERRY ZHANG's blog"></div>
             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154512.jpg?updatedAt=1737445559321" alt="tree" loading="lazy"></div>
             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154647.jpg?updatedAt=1737445626159" alt="tian an men" loading="lazy"></div>
-             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154810.jpg?updatedAt=1737445720187" alt="firework 2024" loading="lazy"></div>
-             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121155005.jpg?updatedAt=1737445877405" alt="Lego p42dc" loading="lazy"></div>
-
-   
+            <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154810.jpg?updatedAt=1737445720187" alt="firework 2024" loading="lazy"></div>
+            <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121155005.jpg?updatedAt=1737445877405" alt="Lego p42dc" loading="lazy"></div>
         </div>
     </section>
     
