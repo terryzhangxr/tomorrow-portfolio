@@ -1,7 +1,8 @@
 # TERRYZHANG'S PORTFOLIO 开源项目介绍
 本项目原为terryzhang的摄影和作品集，现全部开源供取用
 项目示范地址 [portfolio.mrzxr.com](https://portfolio.mrzxr.com)
-页面截图：
+页面示范：
+
 # 1项目特点
 ### 1.1 上手简单
    - 此项目所有的css，js代码经过优化，均在同一个html文件中，上手方便。仅需下载，编辑，部署三步即可上线，您可快速拥有属于自己的照片作品集
@@ -18,4 +19,25 @@
 ### 1.4 UI简洁优雅
    - 现代化设计：网站采用简洁优雅的设计风格，配色和排版都经过精心设计，使整个页面看起来干净整洁。
    - 易于导航：清晰的导航栏和页面结构，使用户可以轻松找到所需内容
+
+# 2配置部署（分为本地和线上两部分，因本项目规模不大，推荐使用线上安装）
+## 2.1线上安装
+1.
+
+## 2.1本地安装
+要在本地运行此项目，请按照以下步骤操作：
+1. 克隆存储库：
+
+    ```bash
+    git clone https://github.com/terryzhangxr/terryzhang-portfolio.git
+    ```
+
+2. 进入项目目录：
+
+    ```bash
+    cd terryzhang-portfolio
+    ```
+
+3. 打开 `index.html` 文件：
+
 
