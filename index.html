@@ -31,23 +31,18 @@
             text-align: center; /* Center align the nav items */
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-            position: relative;
-            overflow: hidden;
-        }
-
         nav ul div {
             display: inline-block; /* Change div to inline-block */
             margin: 0 10px; /* Adjust margin as needed */
+            z-index: 101; /* Ensure divs are on top */
+            position: relative; /* Ensure positioning context */
         }
 
         nav ul div a {
             color: white; /* 改变链接颜色为白色 */
             text-decoration: none;
-            position: relative;
-            z-index: 101; /* Ensure links are on top */
+            z-index: 102; /* Ensure links are on top */
+            position: relative; /* Ensure positioning context */
         }
 
         section {
