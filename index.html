@@ -6,7 +6,6 @@
     <title>Terryzhang 的作品集</title>
     <link rel="icon" href="https://s2.loli.net/2025/01/21/wmMYhAlqsVDoaPp.png" type="image/x-icon">
     <style>
-        /* 内联关键 CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -88,7 +87,7 @@
             max-height: 300px;
             display: block;
             object-fit: cover;
-            loading: lazy;
+            loading: lazy; /* 启用懒加载 */
         }
 
         h2, h5 {
@@ -127,7 +126,7 @@
             align-items: center;
             font-size: 2em;
             z-index: 10000;
-            animation: fadeOut 1.3s ease forwards;
+            animation: fadeOut 2s ease forwards;
         }
 
         @keyframes fadeOut {
@@ -204,7 +203,7 @@
     <section id="portfolio">
         <h2>My Work</h2>
         <div class="gallery">
-            <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-01-13%20213636.png?updatedAt=1737440050555" alt="TERRY ZHANG's blog"></div>
+            <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-01-13%20213636.png?updatedAt=1737440050555" alt="TERRY ZHANG's blog" loading="lazy"></div>
             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154512.jpg?updatedAt=1737445559321" alt="tree" loading="lazy"></div>
             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154647.jpg?updatedAt=1737445626159" alt="tian an men" loading="lazy"></div>
             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154810.jpg?updatedAt=1737445720187" alt="firework 2024" loading="lazy"></div>
