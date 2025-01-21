@@ -99,7 +99,9 @@ VOLA
 
 
 # 部署（此处为vercel）
+
    (本地用户需先将index.html推到GitHub仓库上)
+   
    1.注册并登录 Vercel
    
    2.访问 [Vercel](https://vercel.com) 并注册一个账号，或者登录你的现有账号。
