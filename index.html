@@ -21,6 +21,7 @@
             position: relative;
             transform: translateY(-100%);
             transition: transform 0.5s ease;
+            z-index: 100; /* Ensure header is on top */
         }
 
         nav ul {
@@ -46,7 +47,7 @@
             color: white; /* 改变链接颜色为白色 */
             text-decoration: none;
             position: relative;
-            z-index: 1;
+            z-index: 101; /* Ensure links are on top */
         }
 
         section {
@@ -194,7 +195,7 @@
         <h5>中国 上海 初二学生</h5>
         <p>Python / HTML, JS, CSS 项目构建&开发</p>
         <p>主攻语言：Python, HTML, CSS, JS</p>
-        <p>更多介绍请见：www.mrzxr.com</p>
+        <p>更多介绍请见博客：<div><a class="fx0" href="https://www.mrzxr.com" onclick="return handleLinkClick(event)">www.mrzxr.com</a></div></p>
         <p>⬇⬇⬇⬇⬇</p>        
     </section>
     
