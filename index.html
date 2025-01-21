@@ -23,7 +23,6 @@
             transform: translateY(-100%);
             transition: transform 0.5s ease;
             z-index: 100; /* Ensure header is on top */
-            opacity: 1; /* Ensure header is initially visible */
         }
 
         nav ul {
@@ -212,7 +211,9 @@
         <p class="wechat">WeChat code: xiaozhangterry</p>
     </section>
     
-    <script defer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" defer></script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
 
@@ -295,7 +296,7 @@
             return true; // Allow default behavior on other devices
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" defer></script>
+</body>
+</html>/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" defer></script>
 </body>
 </html>
