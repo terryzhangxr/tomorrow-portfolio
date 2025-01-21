@@ -1,5 +1,5 @@
-# TERRYZHANG'S PORTFOLIO 开源项目介绍
-本项目原为terryzhang的摄影和作品集，现全部开源供取用
+# TOMORROW PORTFOLIO 开源项目介绍
+TOMORROW PORTFOLIO 是一个开源简约的个人摄影和作品集框架，旨在为摄影爱好者提供网上展示空间，代码开源
 项目示范地址 [portfolio.mrzxr.com](https://portfolio.mrzxr.com)
 项目示范：
 ![image](https://github.com/user-attachments/assets/bd789fa7-12ef-4d7f-94e3-8d96c7bbc4cb)
