@@ -20,9 +20,10 @@
             padding: 1em 0;
             text-align: center;
             position: relative;
-            opacity: 0; /* 初始隐藏 */
+            opacity: 1; /* 初始显示 */
+            z-index: 1000; /* 确保 header 在顶层 */
+            transform: translateY(0); /* 确保初始位置 */
             transition: opacity 0.5s ease, transform 0.5s ease;
-            z-index: 100; /* 确保 header 在顶层 */
         }
 
         nav ul {
@@ -35,14 +36,14 @@
         nav ul div {
             display: inline-block; /* 更改 div 为 inline-block */
             margin: 0 10px; /* 调整 margin */
-            z-index: 101; /* 确保 div 在顶层 */
+            z-index: 1001; /* 确保 div 在顶层 */
             position: relative; /* 确保定位上下文 */
         }
 
         nav ul div a {
             color: white; /* 改变链接颜色为白色 */
             text-decoration: none;
-            z-index: 102; /* 确保链接在顶层 */
+            z-index: 1002; /* 确保链接在顶层 */
             position: relative; /* 确保定位上下文 */
         }
 
@@ -124,7 +125,7 @@
             justify-content: center;
             align-items: center;
             font-size: 2em;
-            z-index: 1000;
+            z-index: 10000; /* 确保 overlay 在最上层 */
             animation: fadeOut 1.3s ease forwards;
         }
 
@@ -203,8 +204,12 @@
         <h2>My Work</h2>
         <div class="gallery">
             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-01-13%20213636.png?updatedAt=1737440050555" alt="TERRY ZHANG's blog"></div>
-            <div class="photo"><img src="photo2.jpg" alt="Photo 2" loading="lazy"></div>
-            <div class="photo"><img src="photo3.jpg" alt="Photo 3" loading="lazy"></div>
+            <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154512.jpg?updatedAt=1737445559321" alt="tree" loading="lazy"></div>
+            <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154647.jpg?updatedAt=1737445626159" alt="tian an men" loading="lazy"></div>
+             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121154810.jpg?updatedAt=1737445720187" alt="firework 2024" loading="lazy"></div>
+             <div class="photo"><img src="https://ik.imagekit.io/terryzhang/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250121155005.jpg?updatedAt=1737445877405" alt="Lego p42dc" loading="lazy"></div>
+
+   
         </div>
     </section>
     
@@ -220,8 +225,8 @@
 
             const overlay = document.getElementById('overlay');
             const header = document.getElementById('main-header');
-            
-            // 在页面加载时，确保 header 显示出来
+
+            // 确保在 overlay 动画结束后，header 仍然显示
             header.style.opacity = '1';
             header.style.transform = 'translateY(0)';
 
