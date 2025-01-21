@@ -18,6 +18,9 @@
             color: white;
             padding: 1em 0;
             text-align: center;
+            position: relative;
+            transform: translateY(-100%); /* 初始位置在屏幕上方 */
+            transition: transform 0.5s ease; /* 修改过渡效果持续时间为0.5秒 */
         }
 
         nav ul {
@@ -42,13 +45,13 @@
         }
 
         #contact {
-            min-height: 42vh; /* Set the home section to be 30% of the viewport height */
-        }   
- 
+            min-height: 42vh;
+        }
+
         #about {
             min-height: 23vh;
-        
         }
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -56,24 +59,31 @@
             gap: 20px;
         }
 
-       .photo {
-            width: 30%;
+        .photo {
+            width: 100%;
+            max-width: 400px; /* 最大宽度 */
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.5s, box-shadow 0.5s;transform: scale(var(--scale, 1));
+            transition: transform 0.5s, box-shadow 0.5s;
+            margin: 10px;
         }
-
-
 
         .photo img {
-            width: 100%;
-            height: auto;
+            width: 100%; /* 图像宽度占满容器 */
+            height: auto; /* 高度自动调整，保持比例 */
             display: block;
+            object-fit: cover; /* 确保图像覆盖整个容器 */
         }
 
-        h2, p, h5 {
+        h2, h5 {
             transition: transform 0.5s, opacity 0.5s, color 0.3s;
+        }
+
+        p {
+            opacity: 0; /* 初始透明度为0 */
+            transform: translateY(20px); /* 初始位置向下偏移 */
+            transition: transform 0.5s, opacity 0.5s;
         }
 
         .photo:nth-child(odd) {
@@ -89,10 +99,39 @@
             color: #00bfff; /* Cyan blue color */
             transform: scale(1.1);
         }
-           </style>
+
+        /* Fullscreen overlay for opening animation */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            z-index: 1000;
+            animation: fadeOut 1.1s ease forwards; /* 修改动画持续时间为1秒 */
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <div id="overlay">TERRYZHANG'S PORTFOLIO</div>
+
+    <header id="main-header">
         <h1>Terryzhang's Photo Portfolio</h1>
         <nav>
             <ul>
@@ -108,10 +147,10 @@
     <section id="about">
         <h2>ME</h2>
         <h5>中国 上海 初二学生</h5>
-        <h5>python / HTML,JS,CSS 项目构建&开发</h5>
-        <h5>主攻语言：py html，css，js</h5>
-        <h5>更多介绍请见：www.mrzxr.com</h5>
-        <h3>⬇⬇⬇⬇⬇</h3>         
+        <p>python / HTML,JS,CSS 项目构建&开发</p>
+        <p>主攻语言：py html，css，js</p>
+        <p>更多介绍请见：www.mrzxr.com</p>
+        <p>⬇⬇⬇⬇⬇</p>        
     </section>
     
     <section id="portfolio">
@@ -134,35 +173,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // GSAP animations for the photo gallery
             gsap.registerPlugin(ScrollTrigger);
 
-            gsap.from('header', {
-                duration: 1.5,
-                y: '-100%',
-                ease: 'bounce'
+            // Wait for the overlay animation to end before starting the header animation
+            const overlay = document.getElementById('overlay');
+            const header = document.getElementById('main-header');
+            
+            overlay.addEventListener('animationend', () => {
+                // Header title animation
+                header.style.transform = 'translateY(0)'; // 使header下降到原始位置
             });
 
-            gsap.from('section h2', {
-                scrollTrigger: {
-                    trigger: 'section h2',
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    scrub: true
-                },
-                y: 50,
-                opacity: 0
+            gsap.utils.toArray('section').forEach(section => {
+                gsap.to(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        end: 'top 20%',
+                        toggleActions: 'play none none none'
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power2.out'
+                });
             });
 
-            gsap.from('section p', {
-                scrollTrigger: {
-                    trigger: 'section p',
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    scrub: true
-                },
-                y: 50,
-                opacity: 0
+            gsap.utils.toArray('section p').forEach(p => {
+                gsap.to(p, {
+                    scrollTrigger: {
+                        trigger: p,
+                        start: 'top 90%',
+                        end: 'top 60%',
+                        toggleActions: 'play reverse play reverse',
+                        scrub: true
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power2.out'
+                });
             });
 
             gsap.utils.toArray('.photo').forEach(photo => {
