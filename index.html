@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terryzhang 的作品集——theme tomorrow portfolio</title>
     <link rel="icon" href="https://s2.loli.net/2025/01/21/wmMYhAlqsVDoaPp.png" type="image/x-icon">
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Lato', Arial, sans-serif; /* 使用 Lato 字体 */
             margin: 0;
             padding: 0;
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -27,11 +29,14 @@
             color: white;
             padding: 1em 0;
             text-align: center;
-            position: relative;
-            opacity: 1;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
             z-index: 1000;
-            transform: translateY(0);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         nav ul {
@@ -39,6 +44,8 @@
             padding: 0;
             margin: 0;
             text-align: center;
+            display: flex;
+            gap: 10px;
         }
 
         nav ul div {
@@ -56,7 +63,7 @@
         }
 
         section {
-            padding: 2em;
+            padding: 8em 2em 2em 2em;
             text-align: center;
             min-height: 80vh;
             opacity: 0;
@@ -95,7 +102,12 @@
             max-height: 300px;
             display: block;
             object-fit: cover;
-            loading: lazy; /* 启用懒加载 */
+            loading: lazy;
+        }
+
+        .photo img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         h2, h5 {
@@ -134,7 +146,6 @@
             align-items: center;
             font-size: 2em;
             z-index: 10000;
-            animation: fadeOut 2s ease forwards;
         }
 
         @keyframes fadeOut {
@@ -147,6 +158,21 @@
             }
         }
 
+        @keyframes jumble {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .jumble {
+            display: inline-block;
+            opacity: 0;
+            animation: jumble 2s forwards;
+        }
+
         @media (max-width: 768px) {
             .gallery {
                 flex-direction: column;
@@ -157,6 +183,7 @@
         @media (min-width: 768px) and (max-width: 1024px) {
             header {
                 padding: 1em;
+                height: auto;
             }
 
             .gallery {
@@ -173,7 +200,7 @@
             }
 
             section {
-                padding: 1em;
+                padding: 8em 1em 1em 1em;
             }
 
             nav ul li {
@@ -184,7 +211,9 @@
     </style>
 </head>
 <body>
-    <div id="overlay">TERRY ZHANG'S PORTFOLIO</div>
+    <div id="overlay">
+        <div id="jumble-container"></div>
+    </div>
 
     <header id="main-header">
         <h1>Terryzhang's Photo Portfolio</h1>
@@ -231,15 +260,46 @@
 
             const overlay = document.getElementById('overlay');
             const header = document.getElementById('main-header');
-
+            const jumbleContainer = document.getElementById('jumble-container');
+            const finalText = "TERRYZHANG--PHOTO--PORTFOLIO";
+            
             // 确保在 overlay 动画结束后，header 仍然显示
             header.style.opacity = '1';
             header.style.transform = 'translateY(0)';
+            document.body.style.overflow = 'hidden'; // 禁止滚动
 
-            overlay.addEventListener('animationend', () => {
-                header.style.opacity = '1';
-                header.style.transform = 'translateY(0)';
-            });
+            // 字符跳动动画
+            function jumbleAnimation(text, container, duration) {
+                const characters = "!@#$%^&*()_+{}:<>?[];,./";
+                let current = text.split('');
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.classList.add('jumble');
+                    span.style.animationDelay = `${i * duration / text.length}s`;
+                    container.appendChild(span);
+                    (function animateCharacter(index) {
+                        const interval = setInterval(() => {
+                            if (index === text.length) {
+                                clearInterval(interval);
+                                span.textContent = text[index];
+                                return;
+                            }
+                            span.textContent = characters[Math.floor(Math.random() * characters.length)];
+                        }, 50);
+                        setTimeout(() => {
+                            clearInterval(interval);
+                            span.textContent = text[index];
+                        }, duration * 1000);
+                    })(i);
+                }
+            }
+
+            jumbleAnimation(finalText, jumbleContainer, 2);
+
+            setTimeout(() => {
+                overlay.style.animation = 'fadeOut 2s ease forwards';
+                document.body.style.overflow = 'auto'; // 允许滚动
+            }, 3000); // 3秒后开始淡出动画
 
             gsap.utils.toArray('section').forEach(section => {
                 gsap.to(section, {
