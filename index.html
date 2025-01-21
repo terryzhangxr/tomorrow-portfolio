@@ -184,7 +184,7 @@
     </style>
 </head>
 <body>
-    <div id="overlay">TERRYZHANG'S PORTFOLIO</div>
+    <div id="overlay">TERRY ZHANG'S PORTFOLIO</div>
 
     <header id="main-header">
         <h1>Terryzhang's Photo Portfolio</h1>
@@ -192,7 +192,7 @@
             <ul>
                 <li><a href="https://www.mrzxr.com" target="_blank">BLOG</a></li>
                 <li><a href="https://github.com/terryzhangxr" target="_blank">Github--terryzhangxr</a></li>
-                <li><a href="#portfolio">Pohtos</a></li>
+                <li><a href="#portfolio">Photos</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="mailto:zhang@mrzxr.com" target="_blank">Write to me</a></li>
             </ul>
@@ -200,10 +200,10 @@
     </header>
     
     <section id="about">
-        <h2>ME</h5>
+        <h2>ME</h2>
         <h5>中国 上海 初二学生</h5>
-        <p>python / HTML,JS,CSS 项目构建&开发</p>
-        <p>主攻语言：py html，css，js</p>
+        <p>Python / HTML, JS, CSS 项目构建&开发</p>
+        <p>主攻语言：Python, HTML, CSS, JS</p>
         <p>更多介绍请见：www.mrzxr.com</p>
         <p>⬇⬇⬇⬇⬇</p>        
     </section>
@@ -211,7 +211,7 @@
     <section id="portfolio">
         <h2>My Work</h2>
         <div class="gallery">
-            <div class="photo"><img src="https://s21.ax1x.com/2025/01/21/pEAC8vd.png" alt="TERRYZHANG's blog"></div>
+            <div class="photo"><img src="https://s21.ax1x.com/2025/01/21/pEAC8vd.png" alt="TERRY ZHANG's blog"></div>
             <div class="photo"><img src="photo2.jpg" alt="Photo 2"></div>
             <div class="photo"><img src="photo3.jpg" alt="Photo 3"></div>
         </div>
@@ -220,7 +220,7 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <p class="email">Email: zhang@mrzxr.com</p>
-        <p class="wechat">wechat code: xiaozhangterry</p>
+        <p class="wechat">WeChat code: xiaozhangterry</p>
     </section>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
@@ -311,7 +311,9 @@
 
                 ripple.addEventListener('animationend', () => {
                     ripple.remove();
-                    window.location.href = href; // 动画结束后跳转链接
+                    setTimeout(() => {
+                        window.location.href = href; // 动画结束后跳转链接
+                    }, 100); // 延迟100ms以确保触摸事件处理完整
                 });
             };
 
