@@ -19,8 +19,8 @@
             padding: 1em 0;
             text-align: center;
             position: relative;
-            transform: translateY(-100%); /* 初始位置在屏幕上方 */
-            transition: transform 0.5s ease; /* 修改过渡效果持续时间为0.5秒 */
+            transform: translateY(-100%);
+            transition: transform 0.5s ease;
         }
 
         nav ul {
@@ -60,20 +60,21 @@
         }
 
         .photo {
-            width: 100%;
-            max-width: 400px; /* 最大宽度 */
-            overflow: hidden;
+            max-width: 100%;
             border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.5s, box-shadow 0.5s;
             margin: 10px;
         }
 
         .photo img {
-            width: 100%; /* 图像宽度占满容器 */
-            height: auto; /* 高度自动调整，保持比例 */
+            width: 100%;
+            height: auto;
+            max-width: 400px; /* 限制图片最大宽度 */
+            max-height: 300px; /* 限制图片最大高度 */
             display: block;
-            object-fit: cover; /* 确保图像覆盖整个容器 */
+            object-fit: cover;
         }
 
         h2, h5 {
@@ -81,8 +82,8 @@
         }
 
         p {
-            opacity: 0; /* 初始透明度为0 */
-            transform: translateY(20px); /* 初始位置向下偏移 */
+            opacity: 0;
+            transform: translateY(20px);
             transition: transform 0.5s, opacity 0.5s;
         }
 
@@ -94,13 +95,11 @@
             transform: rotate(2deg);
         }
 
-        /* Add hover effect for text */
         h2:hover, p:hover, h5:hover {
-            color: #00bfff; /* Cyan blue color */
+            color: #00bfff;
             transform: scale(1.1);
         }
 
-        /* Fullscreen overlay for opening animation */
         #overlay {
             position: fixed;
             top: 0;
@@ -114,7 +113,7 @@
             align-items: center;
             font-size: 2em;
             z-index: 1000;
-            animation: fadeOut 1.3s ease forwards; /* 修改动画持续时间为1秒 */
+            animation: fadeOut 1.3s ease forwards;
         }
 
         @keyframes fadeOut {
@@ -124,6 +123,13 @@
             100% {
                 opacity: 0;
                 display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -156,10 +162,9 @@
     <section id="portfolio">
         <h2>My Work</h2>
         <div class="gallery">
-            <div class="photo"><img src="https://www.helloimg.com/i/2025/01/20/678e6c67f3e57.png" alt="TERRYZHANG's blog"></div>
+            <div class="photo"><img src="https://s21.ax1x.com/2025/01/21/pEAC8vd.png" alt="TERRYZHANG's blog"></div>
             <div class="photo"><img src="photo2.jpg" alt="Photo 2"></div>
             <div class="photo"><img src="photo3.jpg" alt="Photo 3"></div>
-            <!-- Add more photos as needed -->
         </div>
     </section>
     
@@ -175,13 +180,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
 
-            // Wait for the overlay animation to end before starting the header animation
             const overlay = document.getElementById('overlay');
             const header = document.getElementById('main-header');
             
             overlay.addEventListener('animationend', () => {
-                // Header title animation
-                header.style.transform = 'translateY(0)'; // 使header下降到原始位置
+                header.style.transform = 'translateY(0)';
             });
 
             gsap.utils.toArray('section').forEach(section => {
@@ -236,7 +239,6 @@
                 });
             });
 
-            // Interactive text hover effect
             document.querySelectorAll('section h2, section p').forEach(text => {
                 text.addEventListener('mouseover', () => {
                     gsap.to(text, { scale: 1.1, duration: 0.3, color: '#00bfff' });
