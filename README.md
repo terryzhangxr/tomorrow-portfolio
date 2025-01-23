@@ -1,7 +1,11 @@
 # TOMORROW PORTFOLIO 开源项目介绍
 TOMORROW PORTFOLIO 是一个开源简约的个人摄影和作品集框架，旨在为摄影爱好者提供网上展示空间，代码开源
-项目示范地址 [portfolio.mrzxr.com](https://portfolio.mrzxr.com)
-项目示范：
+
+项目示范地址：[theme-tomorrow.mrzxr.com](theme-tomorrow.mrzxr.com)
+
+作者自用地址：[portfolio.mrzxr.com](https://portfolio.mrzxr.com)
+
+项目示范（来自作者自用作品集）：
 ![image](https://github.com/user-attachments/assets/bd789fa7-12ef-4d7f-94e3-8d96c7bbc4cb)
 ![image](https://github.com/user-attachments/assets/77ad9a72-aea8-4c81-8ed5-176915385640)
 ![image](https://github.com/user-attachments/assets/cd3cd3c8-909c-4811-95eb-168496d22fe1)
