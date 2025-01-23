@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terryzhang 的作品集——theme tomorrow portfolio</title>
+    <title>theme tomorrow portfolio</title>
     <link rel="icon" href="https://s2.loli.net/2025/01/21/wmMYhAlqsVDoaPp.png"" type="image/x-icon">
     <!-- 引入 Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -229,10 +229,9 @@
     </header>
     
     <section id="about">
-        <h5>中国 上海 初二学生</h5>
-        <p>Python / HTML, JS, CSS 项目构建&开发</p>
-        <p>主攻语言：Python, HTML, CSS, JS</p>
-        <p>更多介绍请见博客：<div><a class="fx0" href="https://www.mrzxr.com" onclick="return handleLinkClick(event)">www.mrzxr.com</a></div></p>
+        <h2>ME</h2>
+        <h5>自述</h5>
+        <p>若要加行，请按照此行缩进</p>
         <p>⬇⬇⬇⬇⬇</p>        
     </section>
     
@@ -249,8 +248,8 @@
     
     <section id="contact">
         <h2>Contact Me</h2>
-        <p class="email">Email: zhang@mrzxr.com</p>
-        <p class="wechat">WeChat code: xiaozhangterry</p>
+        <p class="email">Email: youremail@example.com</p>
+        <p class="联系方式名称">其他联系方式</p>
     </section>
     
     <script defer>
@@ -260,16 +259,16 @@
             const overlay = document.getElementById('overlay');
             const header = document.getElementById('main-header');
             const jumbleContainer = document.getElementById('jumble-container');
-            const finalText = "TERRYZHANG--PHOTO--PORTFOLIO";
+            const finalText = "THEME-TOMORROW-DEMO";  //开屏动画文字，可自定义
             
             // 确保在 overlay 动画结束后，header 仍然显示
             header.style.opacity = '1';
             header.style.transform = 'translateY(0)';
-            document.body.style.overflow = 'hidden'; // 禁止滚动
+            document.body.style.overflow = 'hidden'; // 开屏动画禁止滚动（按需更改，不需要直接删掉这行）
 
-            // 字符跳动动画
+            // 字符跳动动画，可自定义
             function jumbleAnimation(text, container, duration) {
-                const characters = "!@#$%^&*()_+{}:<>?[];,./";
+                const characters = "!@#$%^&*()_+{}:<>?[];,./";  //此处自定义跳动符号
                 let current = text.split('');
                 for (let i = 0; i < text.length; i++) {
                     const span = document.createElement('span');
