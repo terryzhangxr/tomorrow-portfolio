@@ -45,6 +45,7 @@ VOLA
 
 ## 2.1本地安装
 要在本地运行此项目，请按照以下步骤操作：
+
 1. 克隆存储库：
 
     ```bash
@@ -65,12 +66,15 @@ VOLA
 无论您是线上安装还是本地运行，以下方法均适用
 
 1.更改标题
+
   在index.HTML中找到```<head>```部分的```<title>```，在字符串中将原本示范站标题改为您的标题。随后在紧接着下面一行的```<link real="icon" href="此处改成您的logo图床链接" type="image/x-icon">```改成您的logo效果如下
   ![image](https://github.com/user-attachments/assets/2ac1f6a5-5d0b-4943-903a-d831d5268c30)
 
 
-  
+
+
 2.更改开屏动画，首页显示
+
   在```<body>```中找到```<div id="overlay">您的标题</div>```改标题，当开屏动画出现时将显示
   在```<body>``` ```<header id="main-header">```部分找到```<h1>Terryzhang's Photo Portfolio</h1>```将两个h1之间的内容改为您的标题，效果如下
   ![image](https://github.com/user-attachments/assets/3ff83abb-0824-482c-9fc0-a13d1785413d)
@@ -79,6 +83,7 @@ VOLA
 
 
 3.更改首页链接
+
   在刚刚改动的标题部分下方找到如下代码
   ![image](https://github.com/user-attachments/assets/99d64acf-2c80-4672-8680-a99f0848546e)
   这样编辑您的链接```<div><a class="fx0" href="您的链接" onclick="return handleLinkClick(event)">文本</a></div>```
@@ -95,6 +100,7 @@ VOLA
 
   
  4.更改关于界面
+ 
    找到如下代码
    ![image](https://github.com/user-attachments/assets/c1eacae2-1635-49f3-8782-f855b424d6e7)
    将中文字和最后一行链接内容改为您自己的内容
@@ -106,6 +112,7 @@ VOLA
 
 
   5.增加您的图片
+  
     找到如下代码
     ![image](https://github.com/user-attachments/assets/430c60cf-41f2-4e16-ac18-8ea1fb252043)
     将```<div class="photo"><img src="photo2.jpg" alt="Photo 2"></div>```的photo改成您的图床链接，您可继续用这种格式添加图片，数量不限
@@ -116,13 +123,15 @@ VOLA
 
 
   6.更改联系板块
+  
     紧接着图片的就是联系板块，将```<p class="email">Email: zhang@mrzxr.com</p>```中的Email改为您的邮箱，同样您可以按照您的喜好添加联系方式
 
 
 
 
-  7.进阶玩法
-    本项目为开源作者已经添加好了所有的注释，希望有更高自定义度并且有代码基础的用户可以根据注释更改。新手请慎重
+  7.进阶
+  
+    本项目为开源,作者已经添加好了所有的注释，希望有更高自定义度并且有代码基础的用户可以根据注释更改,若需要更进一步，请去往作者自用仓库 /terryzhang-portfolio 获取css和html文件
 
 
 
