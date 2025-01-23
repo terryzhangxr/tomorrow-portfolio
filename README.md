@@ -137,7 +137,9 @@ VOLA
 
    3.新建项目
      点击 "New Project" 按钮，然后选择 "Import Git Repository"。
+     
      授权并选择存储库
+     
      授权 Vercel 访问你的 GitHub 账号，然后选择您的本项目存储库。
 
 
