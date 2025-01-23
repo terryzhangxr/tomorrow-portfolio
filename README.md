@@ -112,7 +112,6 @@ VOLA
 
 
   5.增加您的图片
-  
     找到如下代码
     ![image](https://github.com/user-attachments/assets/430c60cf-41f2-4e16-ac18-8ea1fb252043)
     将```<div class="photo"><img src="photo2.jpg" alt="Photo 2"></div>```的photo改成您的图床链接，您可继续用这种格式添加图片，数量不限
@@ -123,14 +122,12 @@ VOLA
 
 
   6.更改联系板块
-  
     紧接着图片的就是联系板块，将```<p class="email">Email: zhang@mrzxr.com</p>```中的Email改为您的邮箱，同样您可以按照您的喜好添加联系方式
 
 
 
 
   7.进阶
-  
     本项目为开源,作者已经添加好了所有的注释，希望有更高自定义度并且有代码基础的用户可以根据注释更改,若需要更进一步，请去往作者自用仓库 /terryzhang-portfolio 获取css和html文件
 
 
@@ -146,9 +143,7 @@ VOLA
 
    3.新建项目
      点击 "New Project" 按钮，然后选择 "Import Git Repository"。
-     
      授权并选择存储库
-     
      授权 Vercel 访问你的 GitHub 账号，然后选择您的本项目存储库。
 
 
@@ -165,6 +160,7 @@ VOLA
    项目创建者：[terryzhang](https://github.com/terryzhangxr)
    
    欢迎对本项目做出贡献！请遵循以下步骤提交您的贡献：
+   
    1. Fork 此存储库
       
    2. 创建一个新的分支 (`git checkout -b feature-branch`)
